@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
                     pd?.dismiss()
                     val ed=errorDialog(viewmodel)
                     ed.show()
-                    Toast.makeText(this, "ERROR "+it.message, Toast.LENGTH_LONG).show()
+                  //  Toast.makeText(this, "ERROR "+it.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
