@@ -1,12 +1,15 @@
 package com.example.testdemodubai.view
 
+import android.app.Dialog
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.testdemodubai.R
 import com.example.testdemodubai.databinding.ActivityMainBinding
 import com.example.testdemodubai.model.api.ApiHelperImpl
 import com.example.testdemodubai.model.api.RetroInstance
@@ -42,11 +45,27 @@ class MainActivity : AppCompatActivity() {
                 }
                 Status.ERROR -> {
                     pd?.dismiss()
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    val ed=errorDialog(viewmodel)
+                    ed.show()
+                    Toast.makeText(this, "ERROR "+it.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
 
+    }
+
+    private fun errorDialog(viewmodel: MainViewModel): Dialog {
+        val dialog=Dialog(this,android.R.style.ThemeOverlay)
+       dialog.setContentView(R.layout.error_dialog)
+        dialog.findViewById<View>(R.id.try_again).setOnClickListener{
+            viewmodel.makeNetworkCall()
+            dialog.dismiss()
+        }
+        dialog.findViewById<View>(R.id.close_bt).setOnClickListener{
+            dialog.dismiss()
+            finish()
+        }
+        return dialog
     }
 
     private fun populateRecyclerView(baseClass: BaseClass) {

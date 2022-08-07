@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">test demo (dubai)</string>
+    <string name="oops_something_went_wrong">Oops! Something Went Wrong</string>
+    <string name="try_again">Try Again</string>
 </resources>
