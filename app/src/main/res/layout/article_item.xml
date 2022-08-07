@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/thumb_container"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:elevation="0dp"
+        app:cardCornerRadius="@dimen/_50sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:src="@color/black"
+            android:layout_height="match_parent"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_marginStart="@dimen/_5sdp"
+        android:id="@+id/headline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:justificationMode="inter_word"
+        android:text="jsdakj j dfasf khd kh kahd fshdf kadh kjdkjsdfk jdkf jsdkf asdklfjas;dfask djfkas hdfjkahs djkfah sdkjfhja kjsdhfjkks jdhfajs dhfjkah dfjash djf sjdv"
+        android:ellipsize="end"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintStart_toEndOf="@+id/thumb_container"
+        app:layout_constraintEnd_toStartOf="@+id/details"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_marginStart="@dimen/_5sdp"
+        android:id="@+id/authors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:text="jsdakj j dfakjsdhfjkks jdfs dffsdhfajs dhfjkah dfjash djf sjdv"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:minLines="2"
+        android:justificationMode="inter_word"
+        android:textSize="@dimen/_10sdp"
+        android:lineSpacingExtra="@dimen/_5sdp"
+        app:layout_constraintStart_toEndOf="@+id/thumb_container"
+        app:layout_constraintEnd_toStartOf="@+id/details"
+        app:layout_constraintTop_toBottomOf="@+id/headline" />
+    <TextView
+        android:layout_marginStart="@dimen/_5sdp"
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:gravity="center"
+        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+        android:text="2017-26-65"
+        android:ellipsize="end"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textStyle="bold"
+        android:textSize="@dimen/_10sdp"
+        app:layout_constraintEnd_toStartOf="@+id/details"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/details"
+        android:padding="@dimen/_10sdp"
+        android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
